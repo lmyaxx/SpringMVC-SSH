@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"    
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"    
+xmlns:p="http://www.springframework.org/schema/p"    
+xmlns:context="http://www.springframework.org/schema/context" 
+xmlns:mvc="http://www.springframework.org/schema/mvc"
+xsi:schemaLocation="http://www.springframework.org/schema/beans    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd    
+http://www.springframework.org/schema/context    http://www.springframework.org/schema/context/spring-context-3.0.xsd 
+http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd"
+default-lazy-init="true">
+
+	<!-- 开启MVC注解,表示SpringMVC支持注解功能 做了很多事情，不包括添加自己定义的拦截器 -->
+    <mvc:annotation-driven />
+
+   <!-- 扫描器已经有了上面这个mvc注解驱动的功能了，所有不需要了 -->
+  <context:component-scan base-package="com.dhu.controller" />
+
+    <!-- <context:component-scan /> -->
+    <!-- 扫描指定的包中的类上的注解，常用的注解有： -->
+    <!-- @Controller 声明Action组件 -->
+    <!-- @Service 声明Service组件 @Service("xxxService") -->
+    <!-- @Repository 声明Dao组件 -->
+    <!-- @Component 泛指组件, 当不好归类时. -->
+    <!-- @RequestMapping("/menu") 请求映射 -->
+    <!-- @Resource 用于注入，( j2ee提供的 ) 默认按名称装配，@Resource(name="beanName") -->
+    <!-- @Autowired 用于注入，(spring提供的) 默认按类型装配 -->
+    <!-- @Transactional( rollbackFor={Exception.class}) 事务管理 -->
+    <!-- @ResponseBody将内容或对象作为 HTTP 响应正文返回，并调用适合HttpMessageConverter的Adapter转换对象，写入输出流 -->
+    <!-- @Scope("prototype") 设定bean的作用域 -->
+
+
+   <!-- 通过mvc:resources设置静态资源，这样servlet就会处理这些静态资源，而不通过控制器 -->
+    <!-- 设置不过滤内容，比如:css,jquery,img 等资源文件 -->
+    <!--<mvc:resources location="/*.html" mapping="/**.html" />-->
+    <!--<mvc:resources location="/css/*" mapping="/css/**" />-->
+    <!--<mvc:resources location="/js/*" mapping="/js/**" />-->
+    <!--<mvc:resources location="/images/*" mapping="/images/**" />-->
+
+    <!-- 对模型视图名称的解析,在请求时模型视图名称添加前后缀 -->
+    <!--将springmvc不能处理的请求交给tomcat-->
+    <mvc:default-servlet-handler />
+    <!-- 拦截器 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!--拦截器mapping 符合的才会执行拦截器-->
+            <mvc:mapping path="/**"/>
+            <!--在拦截器mapping中除去下面的url，可以放行登陆部分的拦截 -->
+            <mvc:exclude-mapping path="/images/**"/>
+            <mvc:exclude-mapping path="/insdep/**"/>
+            <mvc:exclude-mapping path="/js/**"/>
+            <mvc:exclude-mapping path="/error/**"/>
+            <mvc:exclude-mapping path="/images/**"/>
+            <mvc:exclude-mapping path="/headsculpture/**"/>
+            <mvc:exclude-mapping path="/productPhoto/**"/>
+            <mvc:exclude-mapping path="/fonts/**"/>
+            <mvc:exclude-mapping path="/layui/**"/>
+            <mvc:exclude-mapping path="/tinymce_4.7.13/**"/>
+            <mvc:exclude-mapping path="/css/**"/>
+            <mvc:exclude-mapping path="/captcha/**"/>
+            <mvc:exclude-mapping path="/WEB-INF/jsps/ecommerce/**"/>
+            <mvc:exclude-mapping path="/news/**"/>
+            <mvc:exclude-mapping path="/uploadNewsImg/**"/>
+
+            <!--<mvc:exclude-mapping path="/WEB-INF/jsps/login/login.jsp"/>-->
+            <bean class="com.dhu.util.AccessControl">
+                <property name="excludedUrls">
+                    <list>
+                        <value>/login</value>
+                        <value>/logout</value>
+                        <value>/index</value>
+                        <value>/captcha/getCaptcha</value>
+                        <value>/captcha/checkCaptcha</value>
+                        <value>/ecommerce</value>
+                        <value>/customer</value>
+                        <value>/product</value>
+                        <value>/sale</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+   <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+        <property name="prefix" value="/WEB-INF/jsps/" />      <!-- 前缀 -->
+        <property name="suffix" value=".jsp" />   <!-- 后缀 -->
+    </bean>
+
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="10240000"/>
+    </bean>
+
+    <bean id="captchaProducer" class="com.google.code.kaptcha.impl.DefaultKaptcha">
+        <property name="config">
+            <bean class="com.google.code.kaptcha.util.Config">
+                <constructor-arg>
+                    <props>
+                        <!-- 图片边框 -->
+                        <prop key="kaptcha.border">no</prop>
+                        <!-- 图片宽度 -->
+                        <prop key="kaptcha.image.width">150</prop>
+                        <!-- 图片高度 -->
+                        <prop key="kaptcha.image.height">40</prop>
+                        <!-- 验证码背景颜色渐变，开始颜色 -->
+                        <prop key="kaptcha.background.clear.from">255,255,255</prop>
+                        <!-- 验证码背景颜色渐变，结束颜色 -->
+                        <prop key="kaptcha.background.clear.to">255,255,255</prop>
+                        <!-- 验证码的字符 -->
+                        <prop key="kaptcha.textproducer.char.string">0123456789abcdefghijklmnopqrstuvwxyz</prop>
+                        <!-- 验证码字体颜色 -->
+                        <prop key="kaptcha.textproducer.font.color">black</prop>
+                        <!-- 验证码的效果 -->
+                        <prop key="kaptcha.obscurificator.impl">com.google.code.kaptcha.impl.ShadowGimpy</prop>
+                        <!-- 验证码字体大小 -->
+                        <prop key="kaptcha.textproducer.font.size">32</prop>
+                        <!-- 验证码字数 -->
+                        <prop key="kaptcha.textproducer.char.length">4</prop>
+                        <!-- 验证码文字间距 -->
+                        <prop key="kaptcha.textproducer.char.space">6</prop>
+                        <!-- 验证码字体 -->
+                        <prop key="kaptcha.textproducer.font.names">new Font("Arial", 1, fontSize), new Font("Courier", 1, fontSize)</prop>
+                        <!-- 噪声 -->
+                        <prop key="kaptcha.noise.impl">com.google.code.kaptcha.impl.DefaultNoise</prop>
+                        <prop key="kaptcha.noise.color">0,0,255</prop>
+                    </props>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+
+</beans>

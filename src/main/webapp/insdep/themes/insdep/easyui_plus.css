@@ -1,0 +1,536 @@
+/*
+    JQuery EasyUI 1.5.x of Insdep Theme 1.0.0
+    演示地址：https://www.insdep.com/example/
+    下载地址：https://www.insdep.com
+    问答地址：https://bbs.insdep.com
+
+    项目地址：http://git.oschina.net/weavors/JQuery-EasyUI-1.5.x-Of-Insdep-Theme
+
+    QQ交流群：184075694 （优先发布更新主题及内测包）
+*/
+
+.table {
+  width: 100%;
+  background: #FFFFFF;
+  margin: 1em 0em;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  box-shadow: none;
+  border-radius: 0.28571429rem;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.87);
+  border-collapse: separate;
+  border-spacing: 0px;
+}
+.table:first-child {
+  margin-top: 0em;
+}
+.table:last-child {
+  margin-bottom: 0em;
+}
+
+.table th,
+.table td {
+  -webkit-transition: background 0.1s ease, color 0.1s ease;
+  transition: background 0.1s ease, color 0.1s ease;
+}
+
+.table thead {
+  box-shadow: none;
+}
+.table thead th {
+  cursor: auto;
+  background: #F9FAFB;
+  text-align: inherit;
+  color: rgba(0, 0, 0, 0.87);
+  padding: 0.92857143em 0.78571429em;
+  vertical-align: inherit;
+  font-style: none;
+  font-weight: bold;
+  text-transform: none;
+  border-bottom: 1px solid rgba(34, 36, 38, 0.1);
+  border-left: none;
+}
+.table thead tr > th:first-child {
+  border-left: none;
+}
+.table thead tr:first-child > th:first-child {
+  border-radius: 0.28571429rem 0em 0em 0em;
+}
+.table thead tr:first-child > th:last-child {
+  border-radius: 0em 0.28571429rem 0em 0em;
+}
+.table thead tr:first-child > th:only-child {
+  border-radius: 0.28571429rem 0.28571429rem 0em 0em;
+}
+
+.table tfoot {
+  box-shadow: none;
+}
+.table tfoot th {
+  cursor: auto;
+  border-top: 1px solid rgba(34, 36, 38, 0.15);
+  background: #F9FAFB;
+  text-align: inherit;
+  color: rgba(0, 0, 0, 0.87);
+  padding: 0.78571429em 0.78571429em;
+  vertical-align: middle;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none;
+}
+.table tfoot tr > th:first-child {
+  border-left: none;
+}
+.table tfoot tr:first-child > th:first-child {
+  border-radius: 0em 0em 0em 0.28571429rem;
+}
+.table tfoot tr:first-child > th:last-child {
+  border-radius: 0em 0em 0.28571429rem 0em;
+}
+.table tfoot tr:first-child > th:only-child {
+  border-radius: 0em 0em 0.28571429rem 0.28571429rem;
+}
+
+/* Table Row */
+.table tr td {
+  border-top: 1px solid rgba(34, 36, 38, 0.1);
+}
+.table tr:first-child td {
+  border-top: none;
+}
+
+.table td {
+  padding: 0.78571429em 0.78571429em;
+  text-align: inherit;
+}
+
+
+.table-structured.table {
+  border-collapse: collapse;
+}
+.table-structured.table thead th {
+  border-left: none;
+  border-right: none;
+}
+.table-structured.sortable.table thead th {
+  border-left: 1px solid rgba(34, 36, 38, 0.15);
+  border-right: 1px solid rgba(34, 36, 38, 0.15);
+}
+.table-structured.basic.table th {
+  border-left: none;
+  border-right: none;
+}
+.table-structured.table-celled.table tr th,
+.table-structured.table-celled.table tr td {
+  border-left: 1px solid rgba(34, 36, 38, 0.1);
+  border-right: 1px solid rgba(34, 36, 38, 0.1);
+}
+
+
+.table-definition.table thead:not(.full-width) th:first-child {
+  pointer-events: none;
+  background: transparent;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.4);
+  box-shadow: -1px -1px 0px 1px #FFFFFF;
+}
+.table-definition.table tfoot:not(.full-width) th:first-child {
+  pointer-events: none;
+  background: transparent;
+  font-weight: rgba(0, 0, 0, 0.4);
+  color: normal;
+  box-shadow: 1px 1px 0px 1px #FFFFFF;
+}
+
+.table-celled.table-definition.table thead:not(.full-width) th:first-child {
+  box-shadow: 0px -1px 0px 1px #FFFFFF;
+}
+.table-celled.table-definition.table tfoot:not(.full-width) th:first-child {
+  box-shadow: 0px 1px 0px 1px #FFFFFF;
+}
+
+.table-definition.table tr td:first-child:not(.ignored),
+.table-definition.table tr td.table-definition {
+  background: rgba(0, 0, 0, 0.03);
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.95);
+  text-transform: '';
+  box-shadow: '';
+  text-align: '';
+  font-size: 1em;
+  padding-left: '';
+  padding-right: '';
+}
+
+.table-definition.table thead:not(.full-width) th:nth-child(2) {
+  border-left: 1px solid rgba(34, 36, 38, 0.15);
+}
+.table-definition.table tfoot:not(.full-width) th:nth-child(2) {
+  border-left: 1px solid rgba(34, 36, 38, 0.15);
+}
+.table-definition.table td:nth-child(2) {
+  border-left: 1px solid rgba(34, 36, 38, 0.15);
+}
+
+.table-celled.table tr th,
+.table-celled.table tr td {
+  border-left: 1px solid rgba(34, 36, 38, 0.1);
+}
+.table-celled.table tr th:first-child,
+.table-celled.table tr td:first-child {
+  border-left: none;
+}
+
+.table-striped.table > tr:nth-child(2n),
+.table-striped.table tbody tr:nth-child(2n) {
+  background-color: rgba(0, 0, 50, 0.02);
+}
+
+.inverted.table-striped.table > tr:nth-child(2n),
+.inverted.table-striped.table tbody tr:nth-child(2n) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.table-striped.selectable.selectable.selectable.table tbody tr.active:hover {
+  background: #EFEFEF !important;
+  color: rgba(0, 0, 0, 0.95) !important;
+}
+
+.table-basic.table {
+  background: transparent;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  box-shadow: none;
+}
+.table-basic.table thead,
+.table-basic.table tfoot {
+  box-shadow: none;
+}
+.table-basic.table th {
+  background: transparent;
+  border-left: none;
+}
+.table-basic.table tbody tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.table-basic.table td {
+  background: transparent;
+}
+.table-basic.striped.table tbody tr:nth-child(2n) {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Very Basic */
+[class*="table-very table-basic"].table {
+  border: none;
+}
+[class*="table-very table-basic"].table:not(.sortable):not(.striped) th,
+[class*="table-very table-basic"].table:not(.sortable):not(.striped) td {
+  padding: '';
+}
+[class*="table-very table-basic"].table:not(.sortable):not(.striped) th:first-child,
+[class*="table-very table-basic"].table:not(.sortable):not(.striped) td:first-child {
+  padding-left: 0em;
+}
+[class*="table-very table-basic"].table:not(.sortable):not(.striped) th:last-child,
+[class*="table-very table-basic"].table:not(.sortable):not(.striped) td:last-child {
+  padding-right: 0em;
+}
+[class*="table-very table-basic"].table:not(.sortable):not(.striped) thead tr:first-child th {
+  padding-top: 0em;
+}
+
+/*panel增强*/
+.panel-header.panel-bar-red{ border-color:#e61414; background-color:#e61414; }
+.panel-header.panel-bar-orange{ border-color:#ff6c00; background-color:#ff6c00; }
+.panel-header.panel-bar-yellow{ border-color:#ffbe00; background-color:#ffbe00; }
+.panel-header.panel-bar-olive{ border-color:#afc800; background-color:#afc800; }
+.panel-header.panel-bar-green{ border-color:#41aa00; background-color:#41aa00; }
+.panel-header.panel-bar-teal{ border-color:#00beb4; background-color:#00beb4; }
+.panel-header.panel-bar-blue{ border-color:#007ddc; background-color:#007ddc; }
+.panel-header.panel-bar-darkblue{ border-color:#004b96; background-color:#004b96; }
+.panel-header.panel-bar-violet{ border-color:#642dd7; background-color:#642dd7; }
+.panel-header.panel-bar-purple{ border-color:#a01ec8; background-color:#a01ec8; }
+.panel-header.panel-bar-pink{ border-color:#dc238c; background-color:#dc238c; }
+.panel-header.panel-bar-brown{ border-color:#be5f1e; background-color:#be5f1e; }
+.panel-header.panel-bar-grayish{ border-color:#e1e1e1; background-color:#e1e1e1; }
+.panel-header.panel-bar-grey{ border-color:#646464; background-color:#646464; }
+.panel-header.panel-bar-black{ border-color:#1e1e1e; background-color:#1e1e1e; }
+.panel-header.panel-bar-white{ border-color:#fff; background-color:#fff; }
+
+.panel-header.panel-bar-red .panel-title,
+.panel-header.panel-bar-orange .panel-title,
+.panel-header.panel-bar-yellow .panel-title,
+.panel-header.panel-bar-olive .panel-title,
+.panel-header.panel-bar-green .panel-title,
+.panel-header.panel-bar-teal .panel-title,
+.panel-header.panel-bar-blue .panel-title,
+.panel-header.panel-bar-darkblue .panel-title,
+.panel-header.panel-bar-violet .panel-title,
+.panel-header.panel-bar-purple .panel-title,
+.panel-header.panel-bar-pink .panel-title,
+.panel-header.panel-bar-brown .panel-title,
+.panel-header.panel-bar-grey .panel-title,
+.panel-header.panel-bar-black .panel-title{color: #fff; }
+
+.panel-header.panel-bar-red .panel-tool .panel-tool-close,
+.panel-header.panel-bar-orange .panel-tool .panel-tool-close,
+.panel-header.panel-bar-yellow .panel-tool .panel-tool-close,
+.panel-header.panel-bar-olive .panel-tool .panel-tool-close,
+.panel-header.panel-bar-green .panel-tool .panel-tool-close,
+.panel-header.panel-bar-teal .panel-tool .panel-tool-close,
+.panel-header.panel-bar-blue .panel-tool .panel-tool-close,
+.panel-header.panel-bar-darkblue .panel-tool .panel-tool-close,
+.panel-header.panel-bar-violet .panel-tool .panel-tool-close,
+.panel-header.panel-bar-purple .panel-tool .panel-tool-close,
+.panel-header.panel-bar-pink .panel-tool .panel-tool-close,
+.panel-header.panel-bar-brown .panel-tool .panel-tool-close,
+.panel-header.panel-bar-grey .panel-tool .panel-tool-close,
+.panel-header.panel-bar-black .panel-tool .panel-tool-close,
+
+.panel-header.panel-bar-red .panel-tool .panel-tool-min,
+.panel-header.panel-bar-orange .panel-tool .panel-tool-min,
+.panel-header.panel-bar-yellow .panel-tool .panel-tool-min,
+.panel-header.panel-bar-olive .panel-tool .panel-tool-min,
+.panel-header.panel-bar-green .panel-tool .panel-tool-min,
+.panel-header.panel-bar-teal .panel-tool .panel-tool-min,
+.panel-header.panel-bar-blue .panel-tool .panel-tool-min,
+.panel-header.panel-bar-darkblue .panel-tool .panel-tool-min,
+.panel-header.panel-bar-violet .panel-tool .panel-tool-min,
+.panel-header.panel-bar-purple .panel-tool .panel-tool-min,
+.panel-header.panel-bar-pink .panel-tool .panel-tool-min,
+.panel-header.panel-bar-brown .panel-tool .panel-tool-min,
+.panel-header.panel-bar-grey .panel-tool .panel-tool-min,
+.panel-header.panel-bar-black .panel-tool .panel-tool-min,
+
+.panel-header.panel-bar-red .panel-tool .panel-tool-max,
+.panel-header.panel-bar-orange .panel-tool .panel-tool-max,
+.panel-header.panel-bar-yellow .panel-tool .panel-tool-max,
+.panel-header.panel-bar-olive .panel-tool .panel-tool-max,
+.panel-header.panel-bar-green .panel-tool .panel-tool-max,
+.panel-header.panel-bar-teal .panel-tool .panel-tool-max,
+.panel-header.panel-bar-blue .panel-tool .panel-tool-max,
+.panel-header.panel-bar-darkblue .panel-tool .panel-tool-max,
+.panel-header.panel-bar-violet .panel-tool .panel-tool-max,
+.panel-header.panel-bar-purple .panel-tool .panel-tool-max,
+.panel-header.panel-bar-pink .panel-tool .panel-tool-max,
+.panel-header.panel-bar-brown .panel-tool .panel-tool-max,
+.panel-header.panel-bar-grey .panel-tool .panel-tool-max,
+.panel-header.panel-bar-black .panel-tool .panel-tool-max,
+
+
+.panel-header.panel-bar-red .panel-tool .panel-tool-restore,
+.panel-header.panel-bar-orange .panel-tool .panel-tool-restore,
+.panel-header.panel-bar-yellow .panel-tool .panel-tool-restore,
+.panel-header.panel-bar-olive .panel-tool .panel-tool-restore,
+.panel-header.panel-bar-green .panel-tool .panel-tool-restore,
+.panel-header.panel-bar-teal .panel-tool .panel-tool-restore,
+.panel-header.panel-bar-blue .panel-tool .panel-tool-restore,
+.panel-header.panel-bar-darkblue .panel-tool .panel-tool-restore,
+.panel-header.panel-bar-violet .panel-tool .panel-tool-restore,
+.panel-header.panel-bar-purple .panel-tool .panel-tool-restore,
+.panel-header.panel-bar-pink .panel-tool .panel-tool-restore,
+.panel-header.panel-bar-brown .panel-tool .panel-tool-restore,
+.panel-header.panel-bar-grey .panel-tool .panel-tool-restore,
+.panel-header.panel-bar-black .panel-tool .panel-tool-restore,
+
+.panel-header.panel-bar-red .panel-tool .panel-tool-collapse,
+.panel-header.panel-bar-orange .panel-tool .panel-tool-collapse,
+.panel-header.panel-bar-yellow .panel-tool .panel-tool-collapse,
+.panel-header.panel-bar-olive .panel-tool .panel-tool-collapse,
+.panel-header.panel-bar-green .panel-tool .panel-tool-collapse,
+.panel-header.panel-bar-teal .panel-tool .panel-tool-collapse,
+.panel-header.panel-bar-blue .panel-tool .panel-tool-collapse,
+.panel-header.panel-bar-darkblue .panel-tool .panel-tool-collapse,
+.panel-header.panel-bar-violet .panel-tool .panel-tool-collapse,
+.panel-header.panel-bar-purple .panel-tool .panel-tool-collapse,
+.panel-header.panel-bar-pink .panel-tool .panel-tool-collapse,
+.panel-header.panel-bar-brown .panel-tool .panel-tool-collapse,
+.panel-header.panel-bar-grey .panel-tool .panel-tool-collapse,
+.panel-header.panel-bar-black .panel-tool .panel-tool-collapse,
+
+.panel-header.panel-bar-red .panel-tool .panel-tool-expand,
+.panel-header.panel-bar-orange .panel-tool .panel-tool-expand,
+.panel-header.panel-bar-yellow .panel-tool .panel-tool-expand,
+.panel-header.panel-bar-olive .panel-tool .panel-tool-expand,
+.panel-header.panel-bar-green .panel-tool .panel-tool-expand,
+.panel-header.panel-bar-teal .panel-tool .panel-tool-expand,
+.panel-header.panel-bar-blue .panel-tool .panel-tool-expand,
+.panel-header.panel-bar-darkblue .panel-tool .panel-tool-expand,
+.panel-header.panel-bar-violet .panel-tool .panel-tool-expand,
+.panel-header.panel-bar-purple .panel-tool .panel-tool-expand,
+.panel-header.panel-bar-pink .panel-tool .panel-tool-expand,
+.panel-header.panel-bar-brown .panel-tool .panel-tool-expand,
+.panel-header.panel-bar-grey .panel-tool .panel-tool-expand,
+.panel-header.panel-bar-black .panel-tool .panel-tool-expand{
+  background-image: url('images/panel_tools_white.png');opacity:0.7;
+}
+.panel-header.panel-bar-red .panel-tool a:hover,
+.panel-header.panel-bar-orange .panel-tool a:hover,
+.panel-header.panel-bar-yellow .panel-tool a:hover,
+.panel-header.panel-bar-olive .panel-tool a:hover,
+.panel-header.panel-bar-green .panel-tool a:hover,
+.panel-header.panel-bar-teal .panel-tool a:hover,
+.panel-header.panel-bar-blue .panel-tool a:hover,
+.panel-header.panel-bar-darkblue .panel-tool a:hover,
+.panel-header.panel-bar-violet .panel-tool a:hover,
+.panel-header.panel-bar-purple .panel-tool a:hover,
+.panel-header.panel-bar-pink .panel-tool a:hover,
+.panel-header.panel-bar-brown .panel-tool a:hover,
+.panel-header.panel-bar-grey .panel-tool a:hover,
+.panel-header.panel-bar-black .panel-tool{background-color: transparent;opacity:1;}
+
+
+.panel-header.panel-underline-red b{ border-bottom:4px solid #e61414; }
+.panel-header.panel-underline-orange b{ border-bottom:4px solid #ff6c00;}
+.panel-header.panel-underline-yellow b{ border-bottom:4px solid #ffbe00;}
+.panel-header.panel-underline-olive b{ border-bottom:4px solid #afc800; }
+.panel-header.panel-underline-green b{ border-bottom:4px solid #41aa00; }
+.panel-header.panel-underline-teal b{ border-bottom:4px solid #00beb4; }
+.panel-header.panel-underline-blue b{ border-bottom:4px solid #007ddc; }
+.panel-header.panel-underline-darkblue b{ border-bottom:4px solid #004b96; }
+.panel-header.panel-underline-violet b{ border-bottom:4px solid #642dd7; }
+.panel-header.panel-underline-purple b{ border-bottom:4px solid #a01ec8; }
+.panel-header.panel-underline-pink b{ border-bottom:4px solid #dc238c; }
+.panel-header.panel-underline-brown b{ border-bottom:4px solid #be5f1e; }
+.panel-header.panel-underline-grayish b{ border-bottom:4px solid #e1e1e1; }
+.panel-header.panel-underline-grey b{ border-bottom:4px solid #646464; }
+.panel-header.panel-underline-black b{ border-bottom:4px solid #1e1e1e; }
+
+.panel-header.panel-underline-red b,
+.panel-header.panel-underline-orange b,
+.panel-header.panel-underline-yellow b,
+.panel-header.panel-underline-olive b,
+.panel-header.panel-underline-green b,
+.panel-header.panel-underline-teal b,
+.panel-header.panel-underline-blue b,
+.panel-header.panel-underline-darkblue b,
+.panel-header.panel-underline-violet b,
+.panel-header.panel-underline-purple b,
+.panel-header.panel-underline-pink b,
+.panel-header.panel-underline-brown b,
+.panel-header.panel-underline-grayish b,
+.panel-header.panel-underline-grey b,
+.panel-header.panel-underline-black b{display: inline-block; padding: 10px;margin: -10px 0 0;}
+
+
+.panel-header.panel-block-red .panel-title,
+.panel-header.panel-block-orange .panel-title,
+.panel-header.panel-block-yellow .panel-title,
+.panel-header.panel-block-olive .panel-title,
+.panel-header.panel-block-green .panel-title,
+.panel-header.panel-block-teal .panel-title,
+.panel-header.panel-block-blue .panel-title,
+.panel-header.panel-block-darkblue .panel-title,
+.panel-header.panel-block-violet .panel-title,
+.panel-header.panel-block-purple .panel-title,
+.panel-header.panel-block-pink .panel-title,
+.panel-header.panel-block-brown .panel-title,
+.panel-header.panel-block-grayish .panel-title,
+.panel-header.panel-block-grey .panel-title,
+.panel-header.panel-block-black .panel-title,
+.panel-header.panel-block-white .panel-title{border-left: 10px solid #fff;padding-left:10px; }
+
+.panel-header.panel-block-red .panel-title.panel-with-icon,
+.panel-header.panel-block-orange .panel-title.panel-with-icon,
+.panel-header.panel-block-yellow .panel-title.panel-with-icon,
+.panel-header.panel-block-olive .panel-title.panel-with-icon,
+.panel-header.panel-block-green .panel-title.panel-with-icon,
+.panel-header.panel-block-teal .panel-title.panel-with-icon,
+.panel-header.panel-block-blue .panel-title.panel-with-icon,
+.panel-header.panel-block-darkblue .panel-title.panel-with-icon,
+.panel-header.panel-block-violet .panel-title.panel-with-icon,
+.panel-header.panel-block-purple .panel-title.panel-with-icon,
+.panel-header.panel-block-pink .panel-title.panel-with-icon,
+.panel-header.panel-block-brown .panel-title.panel-with-icon,
+.panel-header.panel-block-grayish .panel-title.panel-with-icon,
+.panel-header.panel-block-grey .panel-title.panel-with-icon,
+.panel-header.panel-block-black .panel-title.panel-with-icon,
+.panel-header.panel-block-white .panel-title.panel-with-icon{ padding-left: 24px; }
+
+.panel-header.panel-block-red .panel-icon,
+.panel-header.panel-block-orange .panel-icon,
+.panel-header.panel-block-yellow .panel-icon,
+.panel-header.panel-block-olive .panel-icon,
+.panel-header.panel-block-green .panel-icon,
+.panel-header.panel-block-teal .panel-icon,
+.panel-header.panel-block-blue .panel-icon,
+.panel-header.panel-block-darkblue .panel-icon,
+.panel-header.panel-block-violet .panel-icon,
+.panel-header.panel-block-purple .panel-icon,
+.panel-header.panel-block-pink .panel-icon,
+.panel-header.panel-block-brown .panel-icon,
+.panel-header.panel-block-grayish .panel-icon,
+.panel-header.panel-block-grey .panel-icon,
+.panel-header.panel-block-black .panel-icon,
+.panel-header.panel-block-white .panel-icon{ left: 25px;}
+
+
+.panel-header.panel-block-red .panel-title{ border-color:#e61414;}
+.panel-header.panel-block-orange .panel-title{ border-color:#ff6c00;}
+.panel-header.panel-block-yellow .panel-title{ border-color:#ffbe00;}
+.panel-header.panel-block-olive .panel-title{ border-color:#afc800;}
+.panel-header.panel-block-green .panel-title{ border-color:#41aa00;}
+.panel-header.panel-block-teal .panel-title{ border-color:#00beb4;}
+.panel-header.panel-block-blue .panel-title{ border-color:#007ddc;}
+.panel-header.panel-block-darkblue .panel-title{ border-color:#004b96; }
+.panel-header.panel-block-violet .panel-title{ border-color:#642dd7; }
+.panel-header.panel-block-purple .panel-title{ border-color:#a01ec8;}
+.panel-header.panel-block-pink .panel-title{ border-color:#dc238c;}
+.panel-header.panel-block-brown .panel-title{ border-color:#be5f1e;}
+.panel-header.panel-block-grayish .panel-title{ border-color:#e1e1e1;}
+.panel-header.panel-block-grey .panel-title{ border-color:#646464;}
+.panel-header.panel-block-black .panel-title{ border-color:#1e1e1e;}
+.panel-header.panel-block-white .panel-title{ border-color:#fff;}
+
+.panel-header.panel-bar-red .panel-title,
+.panel-header.panel-bar-orange .panel-title,
+.panel-header.panel-bar-yellow .panel-title,
+.panel-header.panel-bar-olive .panel-title,
+.panel-header.panel-bar-green .panel-title,
+.panel-header.panel-bar-teal .panel-title,
+.panel-header.panel-bar-blue .panel-title,
+.panel-header.panel-bar-darkblue .panel-title,
+.panel-header.panel-bar-violet .panel-title,
+.panel-header.panel-bar-purple .panel-title,
+.panel-header.panel-bar-pink .panel-title,
+.panel-header.panel-bar-brown .panel-title,
+.panel-header.panel-bar-grayish .panel-title,
+.panel-header.panel-bar-grey .panel-title,
+.panel-header.panel-bar-black .panel-title,
+.panel-header.panel-bar-white .panel-title,
+.panel-header.panel-block-red .panel-title,
+.panel-header.panel-block-orange .panel-title,
+.panel-header.panel-block-yellow .panel-title,
+.panel-header.panel-block-olive .panel-title,
+.panel-header.panel-block-green .panel-title,
+.panel-header.panel-block-teal .panel-title,
+.panel-header.panel-block-blue .panel-title,
+.panel-header.panel-block-darkblue .panel-title,
+.panel-header.panel-block-violet .panel-title,
+.panel-header.panel-block-purple .panel-title,
+.panel-header.panel-block-pink .panel-title,
+.panel-header.panel-block-brown .panel-title,
+.panel-header.panel-block-grayish .panel-title,
+.panel-header.panel-block-grey .panel-title,
+.panel-header.panel-block-black .panel-title,
+.panel-header.panel-block-white .panel-title
+{ min-height: 16px; height: auto; }
+
+
+
+.panel-header.panel-subcaption span,.panel-header.panel-description span
+{ font-weight: normal; opacity:0.7;}
+.panel-header.panel-subcaption span{display: block; }
+.panel-header.panel-description span{display: inline-block; margin: 0 0 0 10px;}
+.panel-header.panel-subcaption .panel-icon,.panel-header.panel-subcaption .panel-tool{margin-top: -22px;}
+/*panel增强 end*/
+
+.badge-tip{border-radius: 50px; font-weight: normal; font-style: normal; }
+.badge-tip{ display:inline-block; width: 8px; height: 8px; line-height: 8px;}
+
+/*第三方修正*/
+.panel-tool .panel-tool-a .iconfont,.tabs-tool .tabs-tool-text .iconfont{height: 14px;line-height:11px;}
+.panel-tool a .badge,.tabs-tool .tabs-tool-text .badge{height: 16px;line-height:14px; }
+.panel-tool a .badge-tip,.tabs-tool .tabs-tool-text .badge-tip{width: 8px; height: 8px; line-height: 8px;}
+.panel-tool a .badge,.tabs-tool .tabs-tool-text .badge{margin:-3px 0 0;}
+.panel-tool a .badge-tip,.tabs-tool .tabs-tool-text .badge-tip{margin: -12px 0 0;}
